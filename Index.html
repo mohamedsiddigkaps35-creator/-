@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>أسرار البيان | خدمات الأفراد والمؤسسات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <style>
+        /* جميع الأنماط السابقة كما هي - لم تتغير */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(145deg, #f6f9fc 0%, #eef2f7 100%);
+            color: #1a2c3e;
+            line-height: 1.5;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9aaebf;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .header {
+            background: #0b2b3b;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #eeb76b;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFF9E6, #FFE3B5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            color: #eeb76b;
+            font-weight: 500;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #f0f3f8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .nav-links a:hover {
+            color: #f9c270;
+        }
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid #f9c270;
+            padding: 8px 22px;
+            border-radius: 40px;
+            color: #f9c270;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .btn-outline-light:hover {
+            background: #f9c270;
+            color: #0b2b3b;
+        }
+        .hero {
+            background: linear-gradient(120deg, #123d4e 0%, #1c5a6f 100%);
+            border-radius: 0 0 48px 48px;
+            margin-bottom: 60px;
+            padding: 60px 0 70px;
+            color: white;
+            position: relative;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            background: #eeb76b;
+            border: none;
+            padding: 14px 38px;
+            border-radius: 44px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #0b2b3b;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .btn-primary:hover {
+            background: #ffcf8a;
+            transform: translateY(-3px);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 50px 0 30px;
+        }
+        .section-title:after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: #eeb76b;
+            display: block;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin: 40px 0;
+        }
+        .service-card {
+            background: white;
+            border-radius: 32px;
+            padding: 28px 20px;
+            transition: 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid rgba(238, 183, 107, 0.3);
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #eeb76b;
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #1c5a6f;
+            margin-bottom: 18px;
+        }
+        .service-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+        .service-btn:hover {
+            background: #eeb76b;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 43, 59, 0.85);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-card {
+            background: #fff;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 48px;
+            padding: 32px 28px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-card input,
+        .modal-card select,
+        .modal-card textarea {
+            width: 100%;
+            padding: 14px 20px;
+            margin: 12px 0;
+            border: 1px solid #cfdfe9;
+            border-radius: 60px;
+            font-family: 'Cairo';
+            font-size: 1rem;
+        }
+        .modal-card button {
+            background: #1c5a6f;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 60px;
+            font-weight: bold;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+        .close-modal {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #8aaec0;
+        }
+        .toggle-auth {
+            margin-top: 18px;
+            color: #1c5a6f;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .dashboard-area,
+        .admin-panel {
+            background: white;
+            border-radius: 36px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border-right: 6px solid #eeb76b;
+        }
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px dashed #e2edf2;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .greeting {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .logout-btn,
+        .back-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .back-btn {
+            background: #eeb76b;
+            color: #0b2b3b;
+        }
+        .private-info {
+            background: #fefaf2;
+            padding: 20px;
+            border-radius: 28px;
+            margin-top: 15px;
+        }
+        .private-note {
+            background: #eef2fa;
+            padding: 14px;
+            border-radius: 28px;
+            font-size: 0.85rem;
+        }
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .users-table th,
+        .users-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: center;
+        }
+        .users-table th {
+            background: #0b2b3b;
+            color: white;
+        }
+        .delete-user-btn,
+        .reset-pwd-btn {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 40px;
+            cursor: pointer;
+            margin: 0 4px;
+            font-size: 0.8rem;
+        }
+        .reset-pwd-btn {
+            background: #f39c12;
+        }
+        .badge-owner {
+            background: #f39c12;
+            color: #2c3e50;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #0b2b3b;
+            color: #ffefcf;
+            padding: 12px 28px;
+            border-radius: 50px;
+            z-index: 1200;
+        }
+        .hidden {
+            display: none;
+        }
+        .flex-btns {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .subservices-container {
+            background: white;
+            border-radius: 36px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        }
+        .subservice-item {
+            background: #f9f9fc;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+        .subservice-item:hover {
+            background: #fff5e6;
+            border-color: #eeb76b;
+            transform: translateX(-5px);
+        }
+        .request-form {
+            background: #fefaf2;
+            border-radius: 28px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 28px;
+            border: 1px solid #cfdfe9;
+            font-family: 'Cairo';
+        }
+        .submit-request {
+            background: #1c5a6f;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* --- أقسام التعليقات (آراء العملاء) --- */
+        .testimonials-section {
+            background: white;
+            border-radius: 36px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border-right: 6px solid #eeb76b;
+        }
+        .testimonial-item {
+            background: #f9f9fc;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        .testimonial-item .rating {
+            color: #f1c40f;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+        .testimonial-item .testimonial-text {
+            font-size: 1rem;
+            margin: 8px 0;
+        }
+        .testimonial-item .testimonial-meta {
+            font-size: 0.85rem;
+            color: #6c7a89;
+        }
+        .testimonial-item .delete-testimonial {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            float: left;
+            margin-top: 8px;
+        }
+        .add-testimonial-form {
+            background: #fefaf2;
+            border-radius: 28px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .add-testimonial-form .rating-input {
+            display: flex;
+            gap: 8px;
+            font-size: 2rem;
+            cursor: pointer;
+            direction: ltr;
+            justify-content: flex-start;
+        }
+        .add-testimonial-form .rating-input span {
+            color: #d5dbe0;
+            transition: 0.2s;
+        }
+        .add-testimonial-form .rating-input span.active {
+            color: #f1c40f;
+        }
+        .add-testimonial-form .rating-input span:hover {
+            color: #f39c12;
+        }
+
+        @media (max-width: 750px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .hero-text h2 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>مكتب أسرار البيان</h1>
+                    <span>للخدمات الإلكترونية العامة</span>
+                </div>
+                <div class="nav-links">
+                    <a id="navHome">الرئيسية</a>
+                    <a id="navServicesLink">خدماتنا</a>
+                    <a id="navAccountBtn">حسابي</a>
+                    <a id="showLoginModalBtn" class="btn-outline-light">تسجيل الدخول</a>
+                    <a id="showRegisterModalBtn" class="btn-outline-light">إنشاء حساب</a>
+                    <button class="back-btn" id="globalBackBtn"><i class="fas fa-arrow-right"></i> رجوع</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h2>حلول إلكترونية شاملة<br>للأفراد والمؤسسات</h2>
+                <p>خدمات متكاملة + تحقق بريدي فعّال • صلاحية المالك الكاملة • تقديم طلبات احترافية.</p>
+                <button class="btn-primary" id="heroRequestBtn">اطلب الخدمة الآن <i class="fas fa-arrow-left"></i></button>
+            </div>
+            <div><i class="fas fa-shield-alt" style="font-size: 130px; opacity: 0.6; color:#ffda9e;"></i></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- القسم الرئيسي للخدمات -->
+        <div id="servicesSection">
+            <div class="section-title">باقات الخدمات الإلكترونية المتطورة</div>
+            <div class="services-grid">
+                <div class="service-card" data-service-type="individuals">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>خدمات الأفراد والمؤسسات</h3>
+                    <p>حلول رقمية شاملة للأفراد والشركات والجهات الحكومية.</p>
+                    <button class="service-btn request-main-service" data-service="خدمات الأفراد والمؤسسات">طلب الخدمة</button>
+                </div>
+                <div class="service-card" data-service-type="insurance">
+                    <div class="service-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>جميع أنواع التأمينات</h3>
+                    <p>تأمينات صحية، مركبات، سفر، تقاعد، وممتلكات بشراكة مع كبرى شركات التأمين.</p>
+                    <button class="service-btn request-main-service" data-service="جميع أنواع التأمينات">طلب الخدمة</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <h3>مراسلات رسمية</h3>
+                    <button class="service-btn request-service" data-service="مراسلات رسمية">طلب الخدمة</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>تحليلات البيانات</h3>
+                    <button class="service-btn request-service" data-service="تحليلات البيانات">طلب الخدمة</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-id-card"></i></div>
+                    <h3>الهوية الرقمية</h3>
+                    <button class="service-btn request-service" data-service="الهوية الرقمية">طلب الخدمة</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>استضافة وبوابة</h3>
+                    <button class="service-btn request-service" data-service="استضافة وبوابة إلكترونية">طلب الخدمة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- لوحة الخدمات الفرعية (تظهر عند اختيار خدمة الأفراد أو التأمينات) -->
+        <div id="subServicesPanel" class="subservices-container hidden">
+            <div class="profile-header">
+                <div class="greeting" id="subServiceTitle">خدمات الأفراد والمؤسسات</div>
+                <button class="back-btn" id="backToMainServicesBtn"><i class="fas fa-arrow-right"></i> رجوع إلى الخدمات الرئيسية</button>
+            </div>
+            <div id="subServicesList"></div>
+            <div id="requestFormContainer" class="hidden request-form"></div>
+        </div>
+
+        <!-- لوحة المستخدم العادي -->
+        <div id="dashboardPanel" class="dashboard-area hidden">
+            <div class="profile-header">
+                <div class="greeting"><i class="fas fa-user-secret"></i> مرحباً، <span id="dashboardUserName">العميل</span></div>
+                <div class="flex-btns">
+                    <button class="back-btn" id="backBtnDashboard"><i class="fas fa-arrow-right"></i> رجوع</button>
+                    <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> تسجيل خروج</button>
+                </div>
+            </div>
+            <div class="private-info">
+                <div class="private-note"><i class="fas fa-shield-alt"></i> خصوصية تامة: بياناتك غير مرئية لأي شخص آخر.</div>
+                <p><i class="fas fa-envelope"></i> <strong>البريد:</strong> <span id="privateEmail">---</span></p>
+                <p><i class="fas fa-calendar-alt"></i> <strong>تاريخ التسجيل:</strong> <span id="privateRegDate">---</span></p>
+                <p><i class="fas fa-fingerprint"></i> <strong>المعرف المشفر:</strong> <span id="privateUid">••••</span></p>
+                <button id="changePwdBtn" style="margin-top:15px; background:#1c5a6f; padding:8px 20px; border-radius:40px; border:none; color:white;"><i class="fas fa-key"></i> تغيير كلمة المرور</button>
+            </div>
+            <div class="service-request">
+                <h4>طلب خدمة جديدة</h4>
+                <div class="request-grid">
+                    <button class="req-btn quick-service" data-service="خدمات الأفراد والمؤسسات">خدمات الأفراد</button>
+                    <button class="req-btn quick-service" data-service="جميع أنواع التأمينات">طلب تأمين</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- لوحة المالك -->
+        <div id="adminPanel" class="admin-panel hidden">
+            <div class="profile-header">
+                <div class="greeting"><i class="fas fa-crown"></i> لوحة المالك: <span id="ownerName">mohamed siddig</span></div>
+                <div class="flex-btns">
+                    <button class="back-btn" id="backBtnAdmin"><i class="fas fa-arrow-right"></i> رجوع</button>
+                    <button class="logout-btn" id="adminLogoutBtn">تسجيل خروج</button>
+                </div>
+            </div>
+            <h3><i class="fas fa-users-cog"></i> جميع الحسابات المسجلة</h3>
+            <div style="overflow-x:auto;">
+                <table class="users-table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>البريد الإلكتروني</th>
+                            <th>تاريخ التسجيل</th>
+                            <th>المعرف</th>
+                            <th>الحالة</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+            </div>
+            <div class="private-note" style="margin-top:20px;"><i class="fas fa-gavel"></i> يمكنك إزالة أي حساب يسيء الاستخدام أو إعادة تعيين كلمة المرور.</div>
+        </div>
+
+        <!-- ========== قسم آراء العملاء (التعليقات) ========== -->
+        <div class="testimonials-section" id="testimonialsSection">
+            <div class="section-title" style="margin-top:0;">آراء العملاء</div>
+
+            <!-- نموذج إضافة تعليق -->
+            <div class="add-testimonial-form">
+                <h4>أضف رأيك</h4>
+                <div class="form-group">
+                    <label>الاسم</label>
+                    <input type="text" id="testimonialName" placeholder="اسمك الكريم" required>
+                </div>
+                <div class="form-group">
+                    <label>البريد الإلكتروني (اختياري)</label>
+                    <input type="email" id="testimonialEmail" placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label>التقييم</label>
+                    <div class="rating-input" id="ratingStars">
+                        <span data-value="1">☆</span>
+                        <span data-value="2">☆</span>
+                        <span data-value="3">☆</span>
+                        <span data-value="4">☆</span>
+                        <span data-value="5">☆</span>
+                    </div>
+                    <input type="hidden" id="testimonialRating" value="0">
+                </div>
+                <div class="form-group">
+                    <label>التعليق</label>
+                    <textarea id="testimonialText" rows="3" placeholder="شاركنا تجربتك مع خدماتنا..." required></textarea>
+                </div>
+                <button class="submit-request" id="addTestimonialBtn"><i class="fas fa-pen"></i> أضف رأيك</button>
+            </div>
+
+            <!-- عرض التعليقات -->
+            <div id="testimonialsList" style="margin-top:25px;">
+                <!-- سيتم عرض التعليقات هنا عبر JavaScript -->
+            </div>
+        </div>
+        <!-- ========== نهاية قسم آراء العملاء ========== -->
+
+    </div>
+
+    <!-- نوافذ التسجيل والدخول -->
+    <div id="authModal" class="modal">
+        <div class="modal-card">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <div id="modalLoginForm">
+                <h3>تسجيل الدخول عبر رمز التحقق</h3>
+                <input type="email" id="loginEmail" placeholder="البريد الإلكتروني">
+                <button id="requestCodeBtn">إرسال رمز التحقق</button>
+                <div id="verifySection" class="hidden" style="margin-top:16px;">
+                    <input type="text" id="verificationCode" placeholder="أدخل الرمز">
+                    <button id="verifyCodeBtn">تحقق وتسجيل الدخول</button>
+                </div>
+                <div class="toggle-auth" id="switchToRegister">ليس لديك حساب؟ إنشاء حساب</div>
+                <div class="forgot-pwd" id="forgotPasswordLink">نسيت كلمة المرور؟ إعادة تعيين</div>
+            </div>
+            <div id="modalRegisterForm" style="display:none;">
+                <h3>إنشاء حساب جديد</h3>
+                <input type="email" id="regEmail" placeholder="البريد الإلكتروني">
+                <input type="password" id="regPassword" placeholder="كلمة المرور">
+                <input type="password" id="regConfirm" placeholder="تأكيد كلمة المرور">
+                <button id="doRegisterBtn">تسجيل وإرسال رمز التفعيل</button>
+                <div class="toggle-auth" id="switchToLogin">لدي حساب بالفعل</div>
+            </div>
+            <div id="modalResetPwd" style="display:none;">
+                <h3>إعادة تعيين كلمة المرور</h3>
+                <input type="email" id="resetEmail" placeholder="بريدك الإلكتروني">
+                <button id="sendResetCodeBtn">إرسال رمز التحقق</button>
+                <div id="resetVerifySection" class="hidden">
+                    <input type="text" id="resetCodeInput" placeholder="الرمز">
+                    <input type="password" id="newPassword" placeholder="كلمة المرور الجديدة">
+                    <input type="password" id="confirmNewPwd" placeholder="تأكيد">
+                    <button id="doResetPasswordBtn">تغيير كلمة المرور</button>
+                </div>
+                <div class="toggle-auth" id="backToLoginFromReset">عودة لتسجيل الدخول</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ---------- EmailJS - إرسال رمز التحقق إلى أي بريد إلكتروني ----------
+        const EMAILJS_PUBLIC_KEY = "kPAP8-UoFcaJPPDlN";
+        const EMAILJS_SERVICE_ID = "224486";
+        const EMAILJS_TEMPLATE_ID = "template_kr3k2nk";
+        // قالب جديد لإرسال الطلبات (يفضل إنشاؤه في لوحة EmailJS)
+        const EMAILJS_TEMPLATE_SERVICE = "template_service_request"; // يمكن تغييره إذا أنشأت قالباً خاصاً
+
+        const isEmailJSConfigured = (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY !==
+            "YOUR_PUBLIC_KEY_HERE");
+        if (isEmailJSConfigured) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // دالة إرسال البريد الفعلي لـ أي عنوان (ليس فقط المالك)
+        async function sendRealEmail(toEmail, code, purpose) {
+            // أولاً: إذا لم يتم تكوين EmailJS بشكل صحيح، نعرض الرمز مباشرةً ونعتبر العملية ناجحة
+            if (!isEmailJSConfigured) {
+                alert(
+                    `📧 [تنبيه: لم يتم إعداد EmailJS بعد]\nالمرسل إليه: ${toEmail}\nرمز التحقق: ${code}\nالغرض: ${purpose}\n\nالرجاء استخدام هذا الرمز لإكمال العملية.`
+                    );
+                return true;
+            }
+
+            try {
+                // محاولة الإرسال الفعلي عبر EmailJS
+                const templateParams = {
+                    to_email: toEmail,
+                    to_name: toEmail.split('@')[0],
+                    code: code,
+                    purpose: purpose,
+                    message: `مرحباً،\n\nرمز التحقق الخاص بحسابك في مكتب أسرار البيان هو: ${code}\n\nالغرض: ${purpose}\n\nيرجى استخدام هذا الرمز لإكمال العملية.\n\nمع تحيات فريق أسرار البيان`,
+                    from_name: "مكتب أسرار البيان",
+                    reply_to: "toEmail"
+                };
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                showToast(`✅ تم إرسال رمز ${purpose} إلى بريدك: ${toEmail}`, false);
+                return true;
+            } catch (error) {
+                console.error("Email sending failed:", error);
+                // في حال فشل الإرسال (مشكلة في القالب أو الخدمة)، نعرض الرمز في تنبيه للمستخدم لضمان استمرار العملية
+                alert(
+                    `⚠️ لم نتمكن من إرسال البريد تلقائياً (خطأ: ${error.text || error.message})\n\nالرمز الخاص بك هو: ${code}\nالغرض: ${purpose}\n\nيمكنك نسخ الرمز واستخدامه يدوياً.`
+                    );
+                return true; // نعتبر العملية ناجحة مع عرض الرمز
+            }
+        }
+
+        async function sendVerificationCode(toEmail, code, purpose) {
+            return await sendRealEmail(toEmail, code, purpose);
+        }
+
+        // ---------- دالة إرسال بيانات الطلب إلى المالك ----------
+        async function sendServiceRequestEmail(requestData) {
+            const ownerEmail = "mohamedsiddigkaps35@gmail.com";
+            if (!isEmailJSConfigured) {
+                // إذا لم يكن EmailJS جاهزاً، نعرض البيانات في تنبيه للمالك (للتجربة)
+                alert(
+                    `📧 [تنبيه: لم يتم إعداد EmailJS]\nطلب خدمة جديد من: ${requestData.userEmail}\nالخدمة: ${requestData.serviceName}\n\nالبيانات:\n${JSON.stringify(requestData.fields, null, 2)}\n\nيرجى التحقق من البيانات يدوياً.`
+                    );
+                return true;
+            }
+
+            try {
+                // بناء نص الرسالة بشكل منظم
+                let fieldsText = '';
+                for (const [key, value] of Object.entries(requestData.fields)) {
+                    fieldsText += `- ${key.replace(/_/g, ' ')}: ${value || 'غير محدد'}\n`;
+                }
+                const messageBody =
+                    `طلب خدمة جديد من العميل:\n\n` +
+                    `البريد الإلكتروني: ${requestData.userEmail}\n` +
+                    `الخدمة: ${requestData.serviceName}\n` +
+                    `التصنيف الرئيسي: ${requestData.mainCategory || 'عام'}\n` +
+                    `الوقت: ${new Date(requestData.timestamp).toLocaleString('ar-SA')}\n\n` +
+                    `--- البيانات ---\n${fieldsText}\n` +
+                    `--- ملاحظات إضافية ---\n${requestData.fields.notes || 'لا توجد ملاحظات'}`;
+
+                const templateParams = {
+                    to_email: ownerEmail,
+                    to_name: "المالك",
+                    subject: `طلب خدمة: ${requestData.serviceName}`,
+                    message: messageBody,
+                    from_name: "نظام أسرار البيان",
+                    reply_to: requestData.userEmail
+                };
+
+                // استخدام قالب الخدمة (إذا كان موجوداً) وإلا استخدام القالب الافتراضي
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_SERVICE, templateParams);
+                showToast(`✅ تم إرسال بيانات الطلب إلى بريد المؤسسة`, false);
+                return true;
+            } catch (error) {
+                console.error("Service request email failed:", error);
+                // عرض البيانات في تنبيه احتياطي
+                alert(
+                    `⚠️ لم نتمكن من إرسال البريد تلقائياً (خطأ: ${error.text || error.message})\n\n` +
+                    `بيانات الطلب:\n${JSON.stringify(requestData, null, 2)}\n\n` +
+                    `يرجى نسخ هذه البيانات والاحتفاظ بها.`
+                );
+                return true;
+            }
+        }
+
+        // ---------- إدارة المستخدمين والجلسة ----------
+        const OWNER_EMAIL = "mohamedsiddigkaps35@gmail.com";
+        let pendingCodes = new Map();
+        let currentSession = { email: null, verified: false, isOwner: false };
+
+        function generateCode() { return Math.floor(100000 + Math.random() * 900000).toString(); }
+
+        function loadUsers() { let u = localStorage.getItem('asrar_users'); return u ? JSON.parse(u) : []; }
+
+        function saveUsers(users) { localStorage.setItem('asrar_users', JSON.stringify(users)); }
+
+        function initOwner() {
+            let users = loadUsers();
+            if (!users.find(u => u.email === OWNER_EMAIL)) users.push({ email: OWNER_EMAIL, password: "Owner@2025",
+                regDate: new Date().toLocaleString('ar-SA'), userId: "OWNER-MASTER", isOwner: true, verified: true });
+            else { let owner = users.find(u => u.email === OWNER_EMAIL);
+                owner.isOwner = true;
+                owner.verified = true; }
+            saveUsers(users);
+        }
+        initOwner();
+
+        function updateUI() {
+            const logged = currentSession.email && currentSession.verified;
+            const isOwner = currentSession.isOwner;
+            document.getElementById('showLoginModalBtn').style.display = logged ? 'none' : 'inline-block';
+            document.getElementById('showRegisterModalBtn').style.display = logged ? 'none' : 'inline-block';
+            document.getElementById('navAccountBtn').style.display = logged ? 'inline-block' : 'none';
+            document.getElementById('dashboardPanel').classList.toggle('hidden', !(logged && !isOwner));
+            document.getElementById('adminPanel').classList.toggle('hidden', !(logged && isOwner));
+            if (logged && !isOwner) fillUserDashboard();
+            if (logged && isOwner) renderUsersTable();
+        }
+
+        function fillUserDashboard() {
+            let user = loadUsers().find(u => u.email === currentSession.email);
+            if (user) {
+                document.getElementById('dashboardUserName').innerText = user.email.split('@')[0];
+                document.getElementById('privateEmail').innerText = user.email;
+                document.getElementById('privateRegDate').innerText = user.regDate;
+                document.getElementById('privateUid').innerText = user.userId.slice(0, 8) + '***';
+            }
+        }
+
+        function renderUsersTable() {
+            let users = loadUsers();
+            let tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = '';
+            users.forEach(user => {
+                let row = tbody.insertRow();
+                row.insertCell(0).innerText = user.email;
+                row.insertCell(1).innerText = user.regDate;
+                row.insertCell(2).innerText = user.userId;
+                let statusCell = row.insertCell(3);
+                if (user.email === OWNER_EMAIL) statusCell.innerHTML = '<span class="badge-owner">المالك</span>';
+                else statusCell.innerText = 'عادي';
+                let actionCell = row.insertCell(4);
+                if (user.email !== OWNER_EMAIL) {
+                    let delBtn = document.createElement('button');
+                    delBtn.innerText = 'إزالة';
+                    delBtn.className = 'delete-user-btn';
+                    delBtn.onclick = () => removeUser(user.email);
+                    let resetBtn = document.createElement('button');
+                    resetBtn.innerText = 'تعديل كلمة المرور';
+                    resetBtn.className = 'reset-pwd-btn';
+                    resetBtn.onclick = () => openResetForUser(user.email);
+                    actionCell.appendChild(delBtn);
+                    actionCell.appendChild(resetBtn);
+                } else actionCell.innerText = 'صلاحية كاملة';
+            });
+        }
+
+        function removeUser(email) {
+            if (email === OWNER_EMAIL) return;
+            let users = loadUsers().filter(u => u.email !== email);
+            saveUsers(users);
+            if (currentSession.email === email) logoutSession();
+            renderUsersTable();
+            showToast(`✅ تم حذف الحساب ${email}`);
+        }
+
+        function openResetForUser(email) {
+            let tempCode = "123456";
+            pendingCodes.set(email, { code: tempCode, expires: Date.now() + 30 * 60000, purpose: 'admin_reset' });
+            alert(`رمز إعادة تعيين ${email}: ${tempCode}`);
+        }
+
+        function logoutSession() {
+            currentSession = { email: null, verified: false, isOwner: false };
+            updateUI();
+            showToast("تم تسجيل الخروج");
+        }
+
+        function showToast(msg, isErr = false) {
+            let t = document.createElement('div');
+            t.className = 'toast-msg';
+            t.innerText = msg;
+            if (isErr) t.style.background = "#a12a2a";
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 3500);
+        }
+
+        // التسجيل والدخول - الآن يرسل رمزاً لأي بريد مسجل
+        async function requestLoginCode(email) {
+            let users = loadUsers();
+            if (!users.find(u => u.email === email)) return { success: false, msg: 'لا يوجد حساب بهذا البريد' };
+            let code = generateCode();
+            pendingCodes.set(email, { code, expires: Date.now() + 10 * 60000, purpose: 'login' });
+            await sendVerificationCode(email, code, 'تسجيل الدخول');
+            return { success: true, msg: 'تم إرسال رمز التحقق إلى بريدك الإلكتروني (تفقد صندوق الوارد أو رسائل غير مرغوب فيها)' };
+        }
+
+        function verifyLogin(email, code) {
+            let pending = pendingCodes.get(email);
+            if (!pending || pending.purpose !== 'login' || pending.code !== code || pending.expires < Date.now()) return {
+                success: false,
+                msg: 'رمز غير صالح أو منتهي الصلاحية'
+            };
+            pendingCodes.delete(email);
+            let user = loadUsers().find(u => u.email === email);
+            if (!user) return { success: false };
+            currentSession = { email, verified: true, isOwner: (email === OWNER_EMAIL) };
+            updateUI();
+            return { success: true, msg: `مرحباً ${email.split('@')[0]}` };
+        }
+
+        async function requestRegisterCode(email, password) {
+            if (loadUsers().find(u => u.email === email)) return { success: false, msg: 'البريد مسجل مسبقاً' };
+            if (password.length < 5) return { success: false, msg: 'كلمة المرور يجب أن تكون 5 أحرف على الأقل' };
+            let code = generateCode();
+            pendingCodes.set(email, { code, expires: Date.now() + 15 * 60000, purpose: 'register', password });
+            await sendVerificationCode(email, code, 'تفعيل الحساب');
+            return { success: true, msg: 'تم إرسال رمز التفعيل إلى بريدك الإلكتروني. استخدمه لإتمام التسجيل.' };
+        }
+
+        function completeRegistration(email, enteredCode) {
+            let pending = pendingCodes.get(email);
+            if (!pending || pending.purpose !== 'register' || pending.code !== enteredCode || pending.expires < Date.now())
+                return { success: false, msg: 'رمز غير صحيح أو منتهي الصلاحية' };
+            let users = loadUsers();
+            if (users.find(u => u.email === email)) return { success: false, msg: 'الحساب موجود بالفعل' };
+            users.push({ email, password: pending.password, regDate: new Date().toLocaleString('ar-SA'), userId: 'USR-' +
+                    Math.random().toString(36).substring(2, 10), verified: true, isOwner: false });
+            saveUsers(users);
+            pendingCodes.delete(email);
+            return { success: true, msg: 'تم تفعيل الحساب بنجاح. يمكنك الآن تسجيل الدخول.' };
+        }
+
+        // ---------- الخدمات الفرعية والنماذج الديناميكية (مع إرسال البريد) ----------
+        const subServicesMap = {
+            "individuals": {
+                title: "خدمات الأفراد والمؤسسات",
+                services: [
+                    { id: "transfer_sponsorship", name: "نقل كفالة", fields: ["الاسم الكامل", "رقم الإقامة",
+                            "رقم الجوال", "اسم الكفيل الجديد", "سبب النقل"
+                        ] },
+                    { id: "issue_visa", name: "إصدار تأشيرة عمل", fields: ["اسم المنشأة", "رقم السجل التجاري",
+                            "المهنة", "عدد التأشيرات", "ملاحظات"
+                        ] },
+                    { id: "renew_residency", name: "تجديد إقامة", fields: ["الاسم الكامل", "رقم الإقامة",
+                            "تاريخ انتهاء الإقامة", "طريقة التجديد (سنوي/شهري)"
+                        ] },
+                    { id: "cancel_visa", name: "إلغاء تأشيرة", fields: ["رقم التأشيرة", "اسم المستفيد",
+                            "سبب الإلغاء"
+                        ] },
+                    { id: "violations_inquiry", name: "الاستعلام عن مخالفات", fields: ["رقم الإقامة",
+                            "رقم الجوال"
+                        ] }
+                ]
+            },
+            "insurance": {
+                title: "جميع أنواع التأمينات",
+                services: [
+                    { id: "health_insurance", name: "وثيقة تأمين طبي", fields: ["الاسم الكامل", "رقم الهوية",
+                            "تاريخ الميلاد", "نوع التغطية (عائلي/فردي)", "الحالة الصحية"
+                        ] },
+                    { id: "car_insurance", name: "تأمين مركبة", fields: ["رقم اللوحة", "موديل المركبة",
+                            "نوع التأمين (شامل/ضد الغير)", "السائقين الإضافيين"
+                        ] },
+                    { id: "travel_insurance", name: "تأمين سفر", fields: ["الوجهة", "مدة السفر (أيام)",
+                            "عدد المسافرين", "تغطية أمتعة (نعم/لا)"
+                        ] }
+                ]
+            }
+        };
+
+        let currentSubServiceType = null;
+        let selectedSubService = null;
+
+        function showSubServicesPanel(type) {
+            currentSubServiceType = type;
+            const data = subServicesMap[type];
+            document.getElementById('subServiceTitle').innerText = data.title;
+            const listDiv = document.getElementById('subServicesList');
+            listDiv.innerHTML = '';
+            data.services.forEach(svc => {
+                const svcDiv = document.createElement('div');
+                svcDiv.className = 'subservice-item';
+                svcDiv.innerHTML = `<h3>${svc.name}</h3><p>انقر لطلب هذه الخدمة</p>`;
+                svcDiv.onclick = () => showRequestForm(svc);
+                listDiv.appendChild(svcDiv);
+            });
+            document.getElementById('requestFormContainer').classList.add('hidden');
+            document.getElementById('servicesSection').classList.add('hidden');
+            document.getElementById('subServicesPanel').classList.remove('hidden');
+            document.getElementById('subServicesPanel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showRequestForm(service) {
+            selectedSubService = service;
+            const container = document.getElementById('requestFormContainer');
+            let fieldsHtml = '';
+            service.fields.forEach(field => {
+                fieldsHtml +=
+                    `<div class="form-group"><label>${field}</label><input type="text" name="${field.replace(/\s/g, '_')}" placeholder="أدخل ${field}" required></div>`;
+            });
+            container.innerHTML =
+                `<h3>طلب خدمة: ${service.name}</h3><form id="dynamicRequestForm">${fieldsHtml}<div class="form-group"><label>ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="أي تفاصيل إضافية..."></textarea></div><button type="submit" class="submit-request">إرسال الطلب</button></form>`;
+            container.classList.remove('hidden');
+            document.getElementById('dynamicRequestForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!currentSession.verified) {
+                    showToast("يجب تسجيل الدخول أولاً", true);
+                    openAuthModal('login');
+                    return;
+                }
+                const formData = new FormData(e.target);
+                const requestData = {
+                    serviceName: selectedSubService.name,
+                    mainCategory: currentSubServiceType,
+                    userEmail: currentSession.email,
+                    timestamp: new Date().toISOString(),
+                    fields: {}
+                };
+                for (let [key, value] of formData.entries()) requestData.fields[key] = value;
+
+                // تخزين الطلب محلياً
+                let requests = JSON.parse(localStorage.getItem('service_requests') || '[]');
+                requests.push(requestData);
+                localStorage.setItem('service_requests', JSON.stringify(requests));
+
+                // إرسال البيانات إلى بريد المؤسسة
+                await sendServiceRequestEmail(requestData);
+
+                showToast(`✅ تم إرسال طلب "${selectedSubService.name}" بنجاح، سيتم التواصل معك قريباً.`);
+                container.classList.add('hidden');
+                showSubServicesPanel(currentSubServiceType);
+            });
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function backToMainServices() {
+            document.getElementById('subServicesPanel').classList.add('hidden');
+            document.getElementById('servicesSection').classList.remove('hidden');
+            currentSubServiceType = null;
+            selectedSubService = null;
+        }
+
+        document.querySelectorAll('.request-main-service').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const card = btn.closest('.service-card');
+                const type = card.getAttribute('data-service-type');
+                if (type === 'individuals') showSubServicesPanel('individuals');
+                else if (type === 'insurance') showSubServicesPanel('insurance');
+            });
+        });
+
+        function requestSimpleService(serviceName) {
+            if (!currentSession.verified) {
+                showToast('يجب تسجيل الدخول أولاً', true);
+                openAuthModal('login');
+                return;
+            }
+            // نرسل طلباً بسيطاً (بدون نموذج)
+            const requestData = {
+                serviceName: serviceName,
+                mainCategory: 'عام',
+                userEmail: currentSession.email,
+                timestamp: new Date().toISOString(),
+                fields: { notes: 'طلب خدمة سريع (بدون نموذج)' }
+            };
+            // تخزين الطلب
+            let requests = JSON.parse(localStorage.getItem('service_requests') || '[]');
+            requests.push(requestData);
+            localStorage.setItem('service_requests', JSON.stringify(requests));
+            // إرسال البريد
+            sendServiceRequestEmail(requestData);
+            showToast(`✅ تم استلام طلب "${serviceName}"، سيتواصل معك فريق الدعم.`);
+        }
+        document.querySelectorAll('.request-service').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                let service = btn.getAttribute('data-service');
+                if (service) requestSimpleService(service);
+            });
+        });
+        document.querySelectorAll('.quick-service').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                let service = btn.getAttribute('data-service');
+                if (service === 'خدمات الأفراد والمؤسسات') showSubServicesPanel('individuals');
+                else if (service === 'جميع أنواع التأمينات') showSubServicesPanel('insurance');
+                else requestSimpleService(service);
+            });
+        });
+
+        document.getElementById('globalBackBtn').onclick = () => window.history.back();
+        document.getElementById('backBtnDashboard').onclick = () => window.history.back();
+        document.getElementById('backBtnAdmin').onclick = () => window.history.back();
+        document.getElementById('backToMainServicesBtn').onclick = backToMainServices;
+        document.getElementById('heroRequestBtn').onclick = () => showSubServicesPanel('individuals');
+
+        const modal = document.getElementById('authModal');
+
+        function openAuthModal(type) {
+            modal.style.display = 'flex';
+            document.getElementById('modalLoginForm').style.display = type === 'login' ? 'block' : 'none';
+            document.getElementById('modalRegisterForm').style.display = type === 'register' ? 'block' : 'none';
+            document.getElementById('modalResetPwd').style.display = type === 'reset' ? 'block' : 'none';
+        }
+        document.getElementById('showLoginModalBtn').onclick = () => openAuthModal('login');
+        document.getElementById('showRegisterModalBtn').onclick = () => openAuthModal('register');
+        document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
+        window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+        document.getElementById('switchToRegister').onclick = () => openAuthModal('register');
+        document.getElementById('switchToLogin').onclick = () => openAuthModal('login');
+        document.getElementById('forgotPasswordLink').onclick = () => openAuthModal('reset');
+        document.getElementById('backToLoginFromReset').onclick = () => openAuthModal('login');
+
+        document.getElementById('requestCodeBtn').onclick = async () => {
+            let email = document.getElementById('loginEmail').value.trim();
+            if (!email) return;
+            let res = await requestLoginCode(email);
+            showToast(res.msg, !res.success);
+            if (res.success) document.getElementById('verifySection').classList.remove('hidden');
+        };
+        document.getElementById('verifyCodeBtn').onclick = () => {
+            let email = document.getElementById('loginEmail').value.trim();
+            let code = document.getElementById('verificationCode').value.trim();
+            let res = verifyLogin(email, code);
+            showToast(res.msg, !res.success);
+            if (res.success) modal.style.display = 'none';
+        };
+        document.getElementById('doRegisterBtn').onclick = async () => {
+            let email = document.getElementById('regEmail').value.trim();
+            let pwd = document.getElementById('regPassword').value;
+            let confirm = document.getElementById('regConfirm').value;
+            if (pwd !== confirm) {
+                showToast('كلمتا المرور غير متطابقتين', true);
+                return;
+            }
+            let res = await requestRegisterCode(email, pwd);
+            if (res.success) {
+                showToast(res.msg);
+                let code = prompt("الرجاء إدخال الرمز المرسل إلى بريدك الإلكتروني:");
+                if (code) {
+                    let final = completeRegistration(email, code);
+                    showToast(final.msg, !final.success);
+                    if (final.success) openAuthModal('login');
+                }
+            } else showToast(res.msg, true);
+        };
+        document.getElementById('sendResetCodeBtn').onclick = async () => {
+            let email = document.getElementById('resetEmail').value.trim();
+            let users = loadUsers();
+            if (!users.find(u => u.email === email)) {
+                showToast('البريد غير مسجل', true);
+                return;
+            }
+            let code = generateCode();
+            pendingCodes.set(email, { code, expires: Date.now() + 15 * 60000, purpose: 'reset' });
+            await sendVerificationCode(email, code, 'إعادة تعيين');
+            showToast('تم إرسال رمز إعادة التعيين');
+            document.getElementById('resetVerifySection').classList.remove('hidden');
+        };
+        document.getElementById('doResetPasswordBtn').onclick = () => {
+            let email = document.getElementById('resetEmail').value.trim();
+            let code = document.getElementById('resetCodeInput').value.trim();
+            let newPwd = document.getElementById('newPassword').value;
+            let confirm = document.getElementById('confirmNewPwd').value;
+            if (newPwd !== confirm) {
+                showToast('غير متطابقة', true);
+                return;
+            }
+            let pending = pendingCodes.get(email);
+            if (!pending || pending.purpose !== 'reset' || pending.code !== code || pending.expires < Date.now()) {
+                showToast('رمز غير صالح', true);
+                return;
+            }
+            let users = loadUsers();
+            let idx = users.findIndex(u => u.email === email);
+            if (idx !== -1) users[idx].password = newPwd;
+            saveUsers(users);
+            pendingCodes.delete(email);
+            showToast('تم تغيير كلمة المرور');
+            openAuthModal('login');
+        };
+        document.getElementById('changePwdBtn')?.addEventListener('click', () => {
+            let old = prompt("كلمة المرور الحالية:");
+            let new1 = prompt("كلمة المرور الجديدة:");
+            let new2 = prompt("تأكيد الجديدة:");
+            if (new1 !== new2) {
+                showToast('غير متطابقة', true);
+                return;
+            }
+            let users = loadUsers();
+            let idx = users.findIndex(u => u.email === currentSession.email);
+            if (idx !== -1 && users[idx].password === old) {
+                users[idx].password = new1;
+                saveUsers(users);
+                showToast('تم تغيير كلمة المرور');
+            } else showToast('كلمة المرور الحالية غير صحيحة', true);
+        });
+        document.getElementById('logoutBtn')?.addEventListener('click', logoutSession);
+        document.getElementById('adminLogoutBtn')?.addEventListener('click', logoutSession);
+        document.getElementById('navAccountBtn').onclick = () => {
+            if (currentSession.email) document.querySelector(currentSession.isOwner ? '#adminPanel' :
+                '#dashboardPanel')?.scrollIntoView({ behavior: 'smooth' });
+            else openAuthModal('login');
+        };
+        document.getElementById('navServicesLink').onclick = () => {
+            backToMainServices();
+            document.getElementById('servicesSection').scrollIntoView({ behavior: 'smooth' });
+        };
+        document.getElementById('navHome').onclick = () => {
+            backToMainServices();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        updateUI();
+
+        // ---------- إدارة التعليقات (آراء العملاء) ----------
+        function loadTestimonials() {
+            let testimonials = JSON.parse(localStorage.getItem('asrar_testimonials') || '[]');
+            const container = document.getElementById('testimonialsList');
+            container.innerHTML = '';
+            if (testimonials.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#7f8c8d;">لا توجد آراء حتى الآن. كن أول من يشاركنا رأيه!</p>';
+                return;
+            }
+            // عرض من الأحدث إلى الأقدم
+            testimonials.slice().reverse().forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'testimonial-item';
+                // نجوم
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    starsHtml += (i <= item.rating) ? '★' : '☆';
+                }
+                div.innerHTML = `
+                    <div class="rating">${starsHtml}</div>
+                    <div class="testimonial-text">${item.text}</div>
+                    <div class="testimonial-meta">
+                        <strong>${item.name}</strong>
+                        ${item.email ? `· ${item.email}` : ''}
+                        · ${new Date(item.date).toLocaleDateString('ar-SA')}
+                    </div>
+                    <button class="delete-testimonial" data-index="${index}">🗑 حذف</button>
+                `;
+                container.appendChild(div);
+            });
+            // إضافة مستمعات للحذف
+            document.querySelectorAll('.delete-testimonial').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idx = this.getAttribute('data-index');
+                    let all = JSON.parse(localStorage.getItem('asrar_testimonials') || '[]');
+                    // لأننا عرضنا معكوساً، نحتاج إلى الفهرس الحقيقي
+                    const realIndex = all.length - 1 - parseInt(idx);
+                    if (realIndex >= 0 && realIndex < all.length) {
+                        all.splice(realIndex, 1);
+                        localStorage.setItem('asrar_testimonials', JSON.stringify(all));
+                        loadTestimonials();
+                        showToast('تم حذف التعليق');
+                    }
+                });
+            });
+        }
+
+        // إضافة تعليق جديد
+        document.getElementById('addTestimonialBtn').addEventListener('click', function() {
+            const name = document.getElementById('testimonialName').value.trim();
+            const email = document.getElementById('testimonialEmail').value.trim();
+            const rating = parseInt(document.getElementById('testimonialRating').value);
+            const text = document.getElementById('testimonialText').value.trim();
+
+            if (!name || !text || rating === 0) {
+                showToast('يرجى ملء الاسم والتقييم والتعليق', true);
+                return;
+            }
+
+            const newTestimonial = {
+                name: name,
+                email: email || '',
+                rating: rating,
+                text: text,
+                date: new Date().toISOString()
+            };
+
+            let all = JSON.parse(localStorage.getItem('asrar_testimonials') || '[]');
+            all.push(newTestimonial);
+            localStorage.setItem('asrar_testimonials', JSON.stringify(all));
+
+            // مسح الحقول
+            document.getElementById('testimonialName').value = '';
+            document.getElementById('testimonialEmail').value = '';
+            document.getElementById('testimonialText').value = '';
+            document.getElementById('testimonialRating').value = '0';
+            // إعادة ضبط النجوم
+            document.querySelectorAll('#ratingStars span').forEach(s => s.classList.remove('active'));
+
+            loadTestimonials();
+            showToast('✅ تم إضافة رأيك، شكراً لك!');
+        });
+
+        // نظام تقييم النجوم
+        const stars = document.querySelectorAll('#ratingStars span');
+        const ratingInput = document.getElementById('testimonialRating');
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                ratingInput.value = value;
+                stars.forEach(s => {
+                    s.classList.toggle('active', parseInt(s.getAttribute('data-value')) <= value);
+                });
+            });
+            star.addEventListener('mouseenter', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                stars.forEach(s => {
+                    s.style.color = (parseInt(s.getAttribute('data-value')) <= value) ? '#f1c40f' :
+                        '#d5dbe0';
+                });
+            });
+            star.addEventListener('mouseleave', function() {
+                const selected = parseInt(ratingInput.value);
+                stars.forEach(s => {
+                    s.style.color = '';
+                    s.classList.toggle('active', parseInt(s.getAttribute('data-value')) <= selected);
+                });
+            });
+        });
+
+        // تحميل التعليقات عند بدء التشغيل
+        loadTestimonials();
+
+        // ---------- نهاية إدارة التعليقات ----------
+    </script>
+
+    <footer style="background:#0c2d3a; color:#e9f0f5; border-radius:48px 48px 0 0; margin-top:80px; padding:40px 0 30px;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+                <div><i class="fas fa-map-marker-alt"></i> <strong>المدينة المنورة، شارع عبدالمجيد بن عبدالعزيز، حي بني عبدالاشهل</strong></div>
+                <div><i class="fas fa-phone-alt"></i> 0532515480 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mohamedsiddigkaps35@gmail.com
+                </div>
+            </div>
+            <div class="copyright" style="text-align: center; margin-top: 30px;">© 2025 مكتب أسرار البيان | نظام متكامل لإدارة الخدمات الإلكترونية</div>
+        </div>
+    </footer>
+</body>
+</html>
